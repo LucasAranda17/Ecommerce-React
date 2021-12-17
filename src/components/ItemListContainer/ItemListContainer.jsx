@@ -3,6 +3,8 @@ import {useParams}from 'react-router-dom'
 import { getFetch } from "../../helpers/getFetch"
 import ItemList from '../ItemList/ItemList'
 
+import './itemListContainer.css';
+
 function ItemListContainer() {
     const [productos, setProductos] = useState([])
     const [loading, setLoading] = useState(true)
@@ -28,7 +30,7 @@ function ItemListContainer() {
     
 
     return (
-        <div>
+        <div className = "containerFather">
         {loading ?
             <h2>Cargando...</h2>
             : 

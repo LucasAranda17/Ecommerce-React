@@ -1,11 +1,13 @@
+import './itemDetail.css';
+
 const ItemDetail = ({ item }) => {
     console.log("El item", item);
     return (
-      <div className="flex bg-dark">
-        <h3>ItemDetail</h3>
-        <h3>{item.title}</h3>
-        <p>{item.description}</p>
-        <img src={`${item.image}`} alt={`${item.image}`}></img>
+      <div className="flex">
+        <h3 className="titulo f">ItemDetail</h3>
+        <h3 className="tituloProducto f">{item.nombre}</h3>
+        <p className="descripcion f">{item.description}</p>
+        <img className="imgDetail"src={`${item.imagen}`} alt={`${item.image}`}></img>
       </div>
     );
   };

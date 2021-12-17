@@ -8,8 +8,8 @@ import Cart from "./components/Cart/Cart";
 function App() {
   return (
     <BrowserRouter>
-    <center>
     <NavBarCustom/>
+      <center>
     <Routes>
       <Route
       exact
@@ -23,7 +23,7 @@ function App() {
        />
        <Route
        exact
-       path="/detalle" 
+       path="/detalle/:id" 
        element={<ItemDetailContainer />}
        />
         <Route
@@ -31,8 +31,9 @@ function App() {
        path="/carrito" 
        element={<Cart/>}
        />
+
     </Routes>
-    </center>
+       </center>
     </BrowserRouter>
   );
 }

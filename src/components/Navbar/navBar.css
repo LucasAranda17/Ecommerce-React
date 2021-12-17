@@ -1,0 +1,11 @@
+.containerNav{
+    background: white;
+    height:30px;
+    font-size:20px;
+    
+}
+.letras{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    margin-left:10px;
+}

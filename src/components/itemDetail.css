@@ -1,0 +1,24 @@
+.flex{
+    background:rgb(61, 109, 134);
+    display:flex;
+}
+.imgDetail{
+    width:400px;
+    height:400px;
+    margin: 40px;
+}
+.titulo{
+    color:white;
+}
+.tituloProducto{
+    color:rgb(255, 255, 255);
+}
+.descripcion{
+    color: rgb(255, 255, 255);
+    font-size:30px;
+}
+.f{
+    margin: 20px;
+display: flex;
+justify-content: flex-start;
+}

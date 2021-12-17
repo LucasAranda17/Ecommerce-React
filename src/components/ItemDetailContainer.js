@@ -1,21 +1,31 @@
-// import {useParams} from 'react-router-dom';
+import {useParams} from 'react-router-dom';
 import { useState, useEffect } from "react";
-import getOneProduct from "../helpers/getOneProduct";
+import {getFetch} from "../helpers/getFetch";
 import ItemDetail from "./ItemDetail";
 
 const ItemDetailContainer = () => {
-  // const {id} = useParams()
+  const [loading, setLoading] = useState(true);
+  const {id} = useParams()
   const [item, setItem] = useState([]);
   console.log("item", item);
 
-  useEffect(() => {
-    getOneProduct.then((res) => setItem(res)).catch((err) => console.log(err));
-  });
+  useEffect(()=>{
+    setLoading(true);
+    getFetch
+    .then((res)=>{
+      const unicoProd = res.find((i)=>i.id===parseInt(id));
+      setItem(unicoProd);
+      setLoading(false);
+    })
+    .catch((error)=>{
+      console.error(error);
+    });
+  },[id]);
 
   return (
     <div>
+      {loading ? <h2>Cargando... </h2>:  <ItemDetail item={item} />}
       <h1>ACA VA EL ITEMDETAILCONTAINER</h1>
-      <ItemDetail item={item} />
     </div>
   );
 };
