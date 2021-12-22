@@ -4,18 +4,21 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import NavBarCustom from './components/Navbar/NavBar';
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import Cart from "./components/Cart/Cart";
+import CartContextProvider from './components/context/CartContext';
 
 function App() {
   return (
+    <CartContextProvider>
+
     <BrowserRouter>
     <NavBarCustom/>
       <center>
     <Routes>
       <Route
       exact
-       path="/" 
-       element={<ItemListContainer/>}
-       />
+      path="/" 
+      element={<ItemListContainer/>}
+      />
        <Route
        exact
        path="/categoria/:idCate" 
@@ -35,6 +38,7 @@ function App() {
     </Routes>
        </center>
     </BrowserRouter>
+       </CartContextProvider>
   );
 }
 
