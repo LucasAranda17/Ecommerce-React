@@ -40,7 +40,8 @@ function CartContextProvider({children}){
         <CartContext.Provider value={{
             cartList,
             agregarAlCarrito,
-            borrarCarrito
+            borrarCarrito,
+            totalUnidades
         }}>
                 { children }
         </CartContext.Provider>
