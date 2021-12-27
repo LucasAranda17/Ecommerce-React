@@ -35,7 +35,7 @@ function CartContextProvider({children}){
            })
          return count
        }
-       value = {totalUnidades}
+       
     return(
         <CartContext.Provider value={{
             cartList,
