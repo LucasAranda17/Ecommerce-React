@@ -28,6 +28,14 @@ function CartContextProvider({children}){
     function borrarCarrito() {
         setCartList([])
     }
+    const totalUnidades = () => {
+        const count = 0
+       cartList.forEach((producto)=> {
+              count += producto.cantidad
+           })
+         return count
+       }
+       value = {totalUnidades}
     return(
         <CartContext.Provider value={{
             cartList,

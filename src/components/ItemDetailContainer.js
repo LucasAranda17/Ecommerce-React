@@ -2,6 +2,7 @@ import {useParams} from 'react-router-dom';
 import { useState, useEffect } from "react";
 import {getFetch} from "../helpers/getFetch";
 import ItemDetail from "./ItemDetail";
+import './ItemDetailContainer.css';
 
 const ItemDetailContainer = () => {
   const [loading, setLoading] = useState(true);
@@ -23,7 +24,7 @@ const ItemDetailContainer = () => {
   },[id]);
 
   return (
-    <div>
+    <div className="ContainerFather">
       {loading ? <h2>Cargando... </h2>:  <ItemDetail item={item} />}
       <h1>ACA VA EL ITEMDETAILCONTAINER</h1>
     </div>

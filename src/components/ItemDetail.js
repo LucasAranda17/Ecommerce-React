@@ -17,12 +17,11 @@ const ItemDetail = ({ item }) => {
     console.log("El item", item);
     return (
       <div className="flex">
-        <h3 className="titulo f">ItemDetail</h3>
-        <h3 className="tituloProducto f">{item.nombre}</h3>
-        <p className="descripcion f">{item.description}</p>
         <img className="imgDetail"src={`${item.imagen}`} alt={`${item.image}`}></img>
+        <h3 className="tituloProducto containerRight">{item.nombre}</h3>
+        <p className="descripcion containerRight">{item.description}</p>
         {!goCart ? ( 
-        <Counter stock={item.stock} onAdd={onAdd}/>
+        <Counter  className="contador containerRight" stock={item.stock} onAdd={onAdd}/>
         ):(
         <Link to="/carrito">Ir al Carrito</Link>
         )}
