@@ -7,7 +7,7 @@ import './navBar.css';
 import { useCartContext } from '../context/CartContext';
 
 function NavBarCustom() {
-  const {totalUnidades} = useContext(useCartContext)
+  const totalUnidades = (useCartContext)
   return (
     <>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
