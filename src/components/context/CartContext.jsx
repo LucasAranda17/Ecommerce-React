@@ -1,15 +1,10 @@
 import { createContext,useState,useContext } from 'react';
 
 const CartContext = createContext([]) 
-export const useCartContext = () =>useContext(CartContext)
+export const useCartContext = () =>useContext(useCartContext)
 
 function CartContextProvider({children}){
     const [cartList, setCartList] = useState([])
-
-    //  function agregarAlCarrito(item) {
-    //     setCartList([...cartList,item])
-    // }
-
 
     const agregarAlCarrito= (item)=>{
         const index = cartList.findIndex(i => i.id === item.id)

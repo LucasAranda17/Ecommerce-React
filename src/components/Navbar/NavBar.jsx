@@ -4,10 +4,10 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import CardWiget from './CardWiget';
 import './navBar.css';
-import { CartContext,useContext } from 'react';
+import { useCartContext ,useContext } from 'react';
 
 function NavBarCustom() {
-  const {totalUnidades} = useContext(CartContext)
+  const {totalUnidades} = useContext(useCartContext)
   return (
     <>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
