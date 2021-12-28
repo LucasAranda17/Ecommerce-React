@@ -4,7 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import CardWiget from './CardWiget';
 import './navBar.css';
-import { useCartContext ,useContext } from 'react';
+import { useCartContext } from '../context/CartContext';
 
 function NavBarCustom() {
   const {totalUnidades} = useContext(useCartContext)
