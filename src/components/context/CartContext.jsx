@@ -26,7 +26,7 @@ function CartContextProvider({children}){
     const totalUnidades = () => {
         let count = 0
        cartList.forEach((producto)=> {
-              count += producto.cantidad
+              count += producto.cant
            })
          return count
        }

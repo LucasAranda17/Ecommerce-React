@@ -2,6 +2,7 @@ import {useState,useEffect} from 'react'
 import {useParams}from 'react-router-dom'
 import { getFetch } from "../../helpers/getFetch"
 import ItemList from '../ItemList/ItemList'
+import {collection,docs,getDocs,getFirestore,query,where} from'firebase/firestore'
 
 import './itemListContainer.css';
 
@@ -12,19 +13,35 @@ function ItemListContainer() {
     const { idCate }=useParams()
 
 
-   useEffect(()=>{
-       if (idCate) {
-        getFetch
-        .then(resp => setProductos(resp.filter(prod=>prod.categoria===idCate)))
-        .catch(err=>console.error(err))
-        .finally(()=>setLoading(false))
-       }else{
-        getFetch
-    .then(resp => setProductos(resp))
-    .catch(err=>console.error(err))
-    .finally(()=>setLoading(false))
-       }
-   }, [idCate])
+//    useEffect(()=>{
+//        if (idCate) {
+//         getFetch
+//         .then(resp => setProductos(resp.filter(prod=>prod.categoria===idCate)))
+//         .catch(err=>console.error(err))
+//         .finally(()=>setLoading(false))
+//        }else{
+//         getFetch
+//     .then(resp => setProductos(resp))
+//     .catch(err=>console.error(err))
+//     .finally(()=>setLoading(false))
+//        }
+//    }, [idCate])
+
+// useEffect(()=>{
+//     const db = getFirestore()
+//     const queryDb = doc(db,'items','EfzJkLZAoaRH6m5ivaJe')
+//     getDoc(queryDb)
+//     .then(resp => setProducto({id:resp.id, ...resp.data() }))
+// }, [idCate])
+useEffect(()=>{
+    const db = getFirestore()
+    const queryCollection = query(collection(db,'items'),where('price','>',10000))
+    getDocs(queryCollection)
+    .then(resp => setProducto(resp.docs.maps(prod => ({id:resp.id, ...prod.data() }))))
+    .catch(err => console.log(err))
+    .finally(() =>setLoading(false))
+    
+}, [idCate])
 
  
     
