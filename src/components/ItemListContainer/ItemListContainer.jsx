@@ -1,8 +1,8 @@
 import {useState,useEffect} from 'react'
 import {useParams}from 'react-router-dom'
-import { getFetch } from "../../helpers/getFetch"
+// import { getFetch } from "../../helpers/getFetch"
 import ItemList from '../ItemList/ItemList'
-import {collection,docs,getDocs,getFirestore,query,where} from'firebase/firestore'
+import {collection,getFirestore,getDocs,query,where} from'firebase/firestore'
 
 import './itemListContainer.css';
 
@@ -34,10 +34,12 @@ function ItemListContainer() {
 //     .then(resp => setProducto({id:resp.id, ...resp.data() }))
 // }, [idCate])
 useEffect(()=>{
+
     const db = getFirestore()
-    const queryCollection = query(collection(db,'items'),where('price','>',10000))
+
+    const queryCollection = query(collection(db,'items'),where('price','>',100))
     getDocs(queryCollection)
-    .then(resp => setProducto(resp.docs.maps(prod => ({id:resp.id, ...prod.data() }))))
+    .then(resp => setProductos(resp.docs.map(prod => ({id:resp.id, ...prod.data() }))))
     .catch(err => console.log(err))
     .finally(() =>setLoading(false))
     
