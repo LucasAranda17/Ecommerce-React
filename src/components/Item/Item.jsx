@@ -5,7 +5,7 @@ function Item({prod}) {
     return (
                 <div 
                 key={prod.id}
-                className='col-md-4'
+                className='col-md-4 animate__animated animate__zoomIn'
                 >
 
                     <div className="card w-60 mt-5">
