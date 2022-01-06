@@ -26,24 +26,19 @@ function ItemListContainer() {
 //     .finally(()=>setLoading(false))
 //        }
 //    }, [idCate])
-
-// useEffect(()=>{
-//     const db = getFirestore()
-//     const queryDb = doc(db,'items','EfzJkLZAoaRH6m5ivaJe')
-//     getDoc(queryDb)
-//     .then(resp => setProducto({id:resp.id, ...resp.data() }))
-// }, [idCate])
 useEffect(()=>{
 
     const db = getFirestore()
 
     const queryCollection = query(collection(db,'items'),where('price','>',100))
     getDocs(queryCollection)
-    .then(resp => setProductos(resp.docs.map(prod => ({id:resp.id, ...prod.data() }))))
+    .then(resp => setProductos(resp.docs.map(prod => ({id:prod.id, ...prod.data() }))))
     .catch(err => console.log(err))
     .finally(() =>setLoading(false))
+    console.log(queryCollection)
     
 }, [idCate])
+
 
  
     

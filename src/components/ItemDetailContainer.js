@@ -1,32 +1,27 @@
 import {useParams} from 'react-router-dom';
 import { useState, useEffect } from "react";
-import {getFetch} from "../helpers/getFetch";
 import ItemDetail from "./ItemDetail";
 import './ItemDetailContainer.css';
-
+import {getFirestore,doc,getDoc} from'firebase/firestore'
 const ItemDetailContainer = () => {
-  const [loading, setLoading] = useState(true);
+  const [producto, setProducto] = useState({})
+  const [loading,setLoading] = useState(true);
   const {id} = useParams()
-  const [item, setItem] = useState([]);
+  const [item] = useState([]);
   console.log("item", item);
 
   useEffect(()=>{
-    setLoading(true);
-    getFetch
-    .then((res)=>{
-      const unicoProd = res.find((i)=>i.id===parseInt(id));
-      setItem(unicoProd);
-      setLoading(false);
-    })
-    .catch((error)=>{
-      console.error(error);
-    });
-  },[id]);
+    const db = getFirestore()
+    const queryDb = doc(db,'items',id)
+    getDoc(queryDb)
+    .then(resp =>setProducto({id:resp.id, ...resp.data() }))
+    .catch(err => console.log(err))
+    .finally(() =>setLoading(false))
+}, [id])
 
   return (
     <div className="ContainerFather">
-      {loading ? <h2>Cargando... </h2>:  <ItemDetail item={item} />}
-      <h1>ACA VA EL ITEMDETAILCONTAINER</h1>
+      {loading ? <h2>Cargando... </h2>:  <ItemDetail item={producto} />}
     </div>
   );
 };

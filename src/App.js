@@ -9,7 +9,6 @@ import CartContextProvider from './components/context/CartContext';
 function App() {
   return (
     <CartContextProvider>
-
     <BrowserRouter>
     <NavBarCustom/>
       <center>
