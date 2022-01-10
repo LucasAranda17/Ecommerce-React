@@ -1,13 +1,12 @@
-import React, {useState} from 'react';
+import React, {useContext,useState} from 'react';
 import './itemDetail.css';
 import Counter from './Navbar/Counter';
 import {Link} from 'react-router-dom'
-import { useCartContext} from './context/CartContext';
+import { CartContext} from '../components/context/CartContext';
 
 const ItemDetail = ({ item }) => {
+  const {agregarAlCarrito} = useContext(CartContext);
   const [goCart,setGoCart] = useState(false)
-
-  const {agregarAlCarrito} = useCartContext()
 
   const onAdd = ( cant)=> {
     agregarAlCarrito({...item,cant:cant})
