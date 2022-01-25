@@ -1,0 +1,9 @@
+.Contador{
+    width: 80%;
+}
+.ContadorButton button{
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(156, 162, 185);
+}

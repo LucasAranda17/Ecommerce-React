@@ -5,3 +5,9 @@
 .btn-block{
     background:white;
 }
+.precio{
+    font-size: 18px;
+    position: absolute;
+    bottom: 140px;
+    margin:5px;
+}

@@ -6,20 +6,18 @@ import CardWiget from './CardWiget';
 import './navBar.css';
 import {useContext} from 'react';
 import {CartContext } from '../context/CartContext';
-
 function NavBarCustom() {
   const {totalUnidades} = useContext(CartContext)
   return (
     <>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Container className="containerNav">
-        <Link className="letras animate__animated animate__lightSpeedInLeft" to="/">React-Nike</Link>
+        <Link className="letras animate__animated animate__lightSpeedInLeft" to="/">Home-React</Link>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto animate__animated animate__lightSpeedInLeft">
             <Link className="letras" to="/categoria/Hombre">Hombre</Link>
             <Link className="letras"  to="/categoria/Mujer">Mujer</Link>
-
             </Nav>
           </Navbar.Collapse>
           <CardWiget/>
@@ -30,5 +28,4 @@ function NavBarCustom() {
     </>
   )
 }
-
 export default NavBarCustom

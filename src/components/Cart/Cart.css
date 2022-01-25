@@ -1,0 +1,31 @@
+.ContainerForm{
+    height: 700px;
+    background-color: rgb(10, 116, 143);
+}
+.form{
+    font-size: 18px;
+    position: relative;
+    top: 100px;
+}
+.FormInput{
+    margin: 10px;
+}
+.FormButtonOrder{
+    margin-top: 100px;
+}
+.FormTitle{
+    color: white;
+    position: relative;
+    bottom: 55px;
+}
+.ProductosLi{
+    color: white;
+    background-color:black;
+    width: 250px;
+    position: relative;
+    left: 470px;
+    top: 10px;
+}
+.FormButton{
+    margin: 10px;
+}
