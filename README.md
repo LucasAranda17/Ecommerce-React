@@ -1,7 +1,5 @@
 Tienda de Nike(Zapatillas)
 
-Dependencias Descargadas
-
 Firebase.
 Utilizo firebase en este proyecto para poder guardar en una base de datos (Firestore) los productos que se muestran en el sitio con todas sus características. También firebase me permite crear usuarios para poder tener un control sobre la gente que compra en el sitio.
 
