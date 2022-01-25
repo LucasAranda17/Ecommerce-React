@@ -40,7 +40,7 @@ Pasos para ver el sitio desde local
 
 2_En nustra terminal elegimos un lugar para clonar la carpeta y escribimos "git clone" + link que copiamos anteriormente
 
-git clone https://github.com/EricWaje/ReactJs-EricWajnrajch.git
+git clone https://github.com/LucasAranda17/desafio2nuevo
 
 3_Desde la terminal nos paramos en la carpeta raiz del proyecto e instalamos todos las dependencias que están dentro con "npm i"
 
