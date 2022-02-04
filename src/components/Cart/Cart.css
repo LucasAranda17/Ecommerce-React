@@ -2,29 +2,13 @@
     height: 700px;
     background-image: linear-gradient(to right, rgba(255,0,0,0), rgb(101, 120, 207));
 }
-.form{
-    font-size: 18px;
+.ProductosLi{
+    color: rgb(0, 0, 0);
+    background-color:rgb(119, 199, 231);
+    width: 1000px;
     position: relative;
     top: 100px;
-}
-.FormInput{
-    margin: 10px;
-}
-.FormButtonOrder{
-    margin-top: 100px;
-}
-.FormTitle{
-    color: white;
-    position: relative;
-    bottom: 55px;
-}
-.ProductosLi{
-    color: white;
-    background-color:black;
-    width: 250px;
-    position: relative;
-    left: 470px;
-    top: 10px;
+    border: 4px solid black;
 }
 .FormButton{
     margin: 10px;

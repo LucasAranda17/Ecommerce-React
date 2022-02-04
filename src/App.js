@@ -5,6 +5,8 @@ import NavBarCustom from "./components/Navbar/NavBar";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import Cart from "./components/Cart/Cart";
 import CartContextProvider from "./components/context/CartContext";
+import Form1 from "./Form1";
+
 function App() {
   return (
     <CartContextProvider>
@@ -24,6 +26,11 @@ function App() {
               element={<ItemDetailContainer />}
             />
             <Route exact path="/carrito" element={<Cart />} />
+            <Route
+              exact
+              path="/form/:idform"
+              element={<Form1 />}
+            />
           </Routes>
         </center>
       </BrowserRouter>
